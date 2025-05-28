@@ -1,0 +1,43 @@
+---
+description: 
+globs: **/components/*.tsx
+alwaysApply: false
+---
+Context7 Usage for Components
+- When creating components with Tailwind styling: "Create a responsive card component with Tailwind v4 (). use context7"
+- For interactive components: "Build a modal with Next.js 15 and Tailwind animations. use context7"
+
+Component Structure
+- Use named exports: export function ComponentName() {}
+- Place components in logical directories: components/ui/, components/forms/
+- Use TypeScript interfaces for props
+
+Tailwind v4 Component Patterns
+```
+// Correct Tailwind v4 approach
+export function Button({ variant = "primary", children, ...props }) {
+  return (
+    
+      {children}
+    
+  )
+}
+```
+
+Server vs Client Components
+- Default to Server Components for static content
+- Use Client Components only for interactivity:
+```
+'use client'
+import { useState } from 'react'
+
+export function InteractiveComponent() {
+  const [state, setState] = useState(false)
+  // Client-side logic here
+}
+```
+
+Component Optimization when develop "use client;" components.
+- Use useMemo and useCallback for expensive operations
+- Implement proper loading and error states
+- Use Suspense boundaries for data fetching components

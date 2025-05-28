@@ -1,0 +1,36 @@
+---
+description: 
+globs: *.js, *.jsx, *.ts, *.tsx, *.css, *.scss
+alwaysApply: false
+---
+Context7 Integration
+- Always add "use context7" to prompts when working with framework-specific code
+- Use Context7 for Next.js, Tailwind, React Query, Zod, and other rapidly evolving libraries
+- Context7 automatically detects which framework you're asking about - no need to specify
+- the conext 7 source for tailwind, tailwindcss or tailwind css is `/tailwindlabs/tailwindcss.com`.
+- the conext 7 source for nextjs, next.js is `/vercel/next.js`.
+
+Tailwind CSS v4 Configuration
+- Use CSS-first configuration with @theme directive instead of tailwind.config.js
+- Configure design tokens directly in CSS file:
+```
+@import "tailwindcss";
+@theme {
+  --color-primary: hsl(49, 100%, 7%);
+  --color-accent: oklch(0.84 0.18 117.33);
+  --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 1920px;
+}
+```
+
+Next.js 15 Breaking Changes
+- params and searchParams are now async - always await them
+- Use proper async/await patterns in server components
+- Handle loading states with Suspense boundaries
+
+Code Quality Standards
+- Use named exports instead of default exports for components
+- Implement proper TypeScript typing
+- Use Server Components by default, Client Components only when needed
+- Optimize for performance and accessibility
+- Use bun or bunx instead of npm or npx for building or running commands.
